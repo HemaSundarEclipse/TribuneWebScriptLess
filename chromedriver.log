@@ -1,0 +1,51 @@
+[0.000][INFO]:      ChromeDriver 23.0.1240.0 E:\UI\UIAutomation\userInterface\chromedriver.exe
+[1.874][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.switches": [ "--start-maximized", "--ignore-certificate-errors" ],
+   "platform": "ANY",
+   "version": ""
+}
+
+[1.875][INFO]:      Launching chrome: "C:\Users\xebia\AppData\Local\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors --start-maximized --ignore-certificate-errors about:blank
+[2.082][INFO]:      Connected to Chrome successfully. Version: 21.0.1180.89
+[2.123][FINE]:      Command received (/session/45a74e85e9943871143c2bb3675d72be)
+[2.123][FINE]:      Command finished (/session/45a74e85e9943871143c2bb3675d72be) with response {
+   "sessionId": "45a74e85e9943871143c2bb3675d72be",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "21.0.1180.89",
+      "webStorageEnabled": true
+   }
+}
+
+[10.739][FINE]:     Command received (/session/45a74e85e9943871143c2bb3675d72be/url) with params {
+   "url": "http://mdmregtest:8080/ui"
+}
+
+[10.740][FINER]:    Waiting for all views to stop loading...
+[10.740][FINER]:    Done waiting for all views to stop loading
+[29.650][FINER]:    Waiting for all views to stop loading...
+[29.650][FINER]:    Done waiting for all views to stop loading
+[29.650][FINE]:     Command finished (/session/45a74e85e9943871143c2bb3675d72be/url) with response {
+   "sessionId": "45a74e85e9943871143c2bb3675d72be",
+   "status": 0,
+   "value": {
+
+   }
+}
+

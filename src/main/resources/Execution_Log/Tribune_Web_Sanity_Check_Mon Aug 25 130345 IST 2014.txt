@@ -1,0 +1,16 @@
+TestCaseID							TestStep							BDD_Step							Status							Remarks
+
+HomePageChecks		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageChecks		verifypageproperty		And I verify title of the page		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Master Logo for 'Lost Angeles Times' is displayed.		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Facebook Like link is displayed.		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Date is displayed		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether link to go to weather page is displayed		pass		
+
+HomePageChecks		closebrowser		And I close the browser		pass		
+

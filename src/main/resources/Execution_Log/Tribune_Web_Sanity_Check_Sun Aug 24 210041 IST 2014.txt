@@ -1,0 +1,68 @@
+TestCaseID							TestStep							BDD_Step							Status							Remarks
+
+HomePageChecks		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageChecks		verifypageproperty		And I verify title of the page		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Master Logo for 'Lost Angeles Times' is displayed.		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Facebook Like link is displayed.		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether Date is displayed		pass		
+
+HomePageChecks		verifyobjectpresent		And I verify whether link to go to weather page is displayed		pass		
+
+HomePageChecks		closebrowser		And I close the browser		pass		
+
+HomePageSearchChecks		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageSearchChecks		verifypageproperty		And I verify title of the page		pass		
+
+HomePageSearchChecks		type		And I enter 'Whitehouse' in search box		pass		
+
+HomePageSearchChecks		click		And I click 'Search' button.		pass		
+
+HomePageSearchChecks		verifypageproperty		Then I verify it takes user to search page		pass		
+
+HomePageSearchChecks		verifyTextpresent		Then I verify that it shows 'Search' in Header		pass		
+
+HomePageSearchChecks		closebrowser		Close browser		pass		
+
+HomePageSubscriberCheck		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageSubscriberCheck		verifypageproperty		And I verify title of the page		pass		
+
+HomePageSubscriberCheck		click		When I click on 'Subscriber' link		pass		
+
+HomePageSubscriberCheck		verifypageproperty		Then I should be on 'Subscriber' page – Check url		pass		
+
+HomePageSubscriberCheck		verifypageproperty		And I verify title of the page		pass		
+
+HomePageSubscriberCheck		verifyTextpresent		And I verify that page should have 'Find Special Offers' text		pass		
+
+HomePageSubscriberCheck		closebrowser		Close browser		pass		
+
+HomePageSportsMenuCheck		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageSportsMenuCheck		verifypageproperty		And I verify title of the page		pass		
+
+HomePageSportsMenuCheck		mouseover		When I hover on 'Sports' menu item		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'Angels' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'Clippers' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'Kings' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'NFL' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'World Cup' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'Lakers' sports menu item.		pass		
+
+HomePageSportsMenuCheck		verifyObjectPresent		Then it should display 2nd level 'USC' sports menu item.		pass		
+
+HomePageSportsMenuCheck		wait		And I wait for 5 secs		pass		
+
+HomePageSportsMenuCheck		closebrowser		Close browser		pass		(Non-Runnable)This step was marked to be ignored.
+

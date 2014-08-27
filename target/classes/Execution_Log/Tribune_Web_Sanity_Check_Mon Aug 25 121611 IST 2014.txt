@@ -1,0 +1,40 @@
+TestCaseID							TestStep							BDD_Step							Status							Remarks
+
+HomePageChecks		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageChecks		verifypageproperty		And I verify title of the page		fail		No response from driver. Session not exist.
+
+HomePageChecks		verifyobjectpresent		And I verify whether Master Logo for 'Lost Angeles Times' is displayed.		fail		Unable to locate element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'Gaurav-Bansal', ip: '192.168.1.185', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Driver info: driver.version: unknown
+
+HomePageChecks		verifyobjectpresent		And I verify whether Facebook Like link is displayed.		fail		Unable to locate element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'Gaurav-Bansal', ip: '192.168.1.185', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Driver info: driver.version: unknown
+
+HomePageChecks		verifyobjectpresent		And I verify whether Date is displayed		fail		Unable to locate element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'Gaurav-Bansal', ip: '192.168.1.185', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Driver info: driver.version: unknown
+
+HomePageChecks		verifyobjectpresent		And I verify whether link to go to weather page is displayed		fail		Unable to locate element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'Gaurav-Bansal', ip: '192.168.1.185', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Driver info: driver.version: unknown
+
+HomePageChecks		closebrowser		And I close the browser		fail		ERROR The test with session id 13c70e7272ad4a63aadd4279c21cbea1 has already finished, and can't receive further commands
+You can learn more at https://saucelabs.com/jobs/13c70e7272ad4a63aadd4279c21cbea1
+For help, please check https://docs.saucelabs.com/reference/troubleshooting-common-error-messages/
+Command duration or timeout: 345 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'Gaurav-Bansal', ip: '192.168.1.185', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: 13c70e7272ad4a63aadd4279c21cbea1
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true, ignoreZoomSetting=false, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, webdriver.remote.sessionid=8c447eb3-4c65-4eff-94e5-2a85af07abe3, version=9, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, handlesAlerts=true, initialBrowserUrl=http://localhost:33765/, ie.forceCreateProcessApi=false, nativeEvents=true, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/proxy.pac, proxyType=pac}, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+

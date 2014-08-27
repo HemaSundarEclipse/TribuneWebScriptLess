@@ -1,0 +1,6 @@
+TestCaseID							TestStep							BDD_Step							Status							Remarks
+
+HomePageChecks		openbrowser		Given I Open the browser to go to default application		pass		
+
+HomePageChecks		verifypageproperty		And I verify title of the page		fail		No response from driver. Session not exist.
+
