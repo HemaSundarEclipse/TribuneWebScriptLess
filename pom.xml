@@ -16,19 +16,9 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.0</version>
+			<version>4.11</version>
 		</dependency>
 
-<!-- 		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.41.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>2.41.0</version>
-		</dependency> -->
 		<dependency>
 		  <groupId>org.seleniumhq.selenium</groupId>
 		  <artifactId>selenium-server-standalone</artifactId>
@@ -39,11 +29,13 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
-			<artifactId>selenium-java-client-driver</artifactId>
-			<version>1.0.2</version>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.3.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>
@@ -64,47 +56,7 @@
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
 		</dependency>
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<version>2.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>biz.neustar</groupId>
-			<artifactId>browsermob-proxy</artifactId>
-			<version>2.0-beta-6</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.seleniumhq.selenium</groupId>
-					<artifactId>selenium-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>4.2.1</version>
-		</dependency>
-<!-- 		<dependency>
-			<groupId>com.ibm.db2.jcc</groupId>
-			<artifactId>db2jcc</artifactId>
-			<version>9</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ibm.db2.jcc</groupId>
-			<artifactId>db2jcc_license_cu</artifactId>
-			<version>9</version>
-		</dependency> -->
-<!-- 		<dependency>
-    <groupId>com.oracle</groupId>
-    <artifactId>ojdbc14</artifactId>
-    <version>10.2.0.3.0</version>
-</dependency> -->
-<dependency>
-	<groupId>postgresql</groupId>
-	<artifactId>postgresql</artifactId>
-	<version>9.1-901.jdbc4</version>
-</dependency>
+
 	</dependencies>
 
 
@@ -112,21 +64,10 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.12</version>
+				<version>2.17</version>
 				<configuration>
 					<skip>true</skip>
-					<!--systemPropertyVariables> <BrowserType>firefox</BrowserType> <RemoteExecution>false</RemoteExecution> 
-						<RemoteUrl>http://tst_salesforce.humaninference.com:4444</RemoteUrl> </systemPropertyVariables> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -136,31 +77,17 @@
 						</goals>
 						<configuration>
 							<skip>false</skip>
-							<systemPropertyVariables>
+<!-- 							<systemPropertyVariables>
 								<BrowserType>firefox</BrowserType>
 								<RemoteExecution>false</RemoteExecution>
-							</systemPropertyVariables>
+							</systemPropertyVariables>  -->
 							<forkMode>never</forkMode>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>selenium-maven-plugin</artifactId>
-				<version>2.2</version>
-				<!--<executions> <execution> <phase>pre-integration-test</phase> <goals> 
-					<goal>start-server</goal> </goals> <configuration> <background>true</background> 
-					</configuration> </execution> <execution> <id>stop-selenium</id> <phase>post-integration-test</phase> 
-					<goals> <goal>stop-server</goal> </goals> </execution> </executions> -->
-			</plugin>
+
 		</plugins>
 	</build>
-	<repositories>
-	  <repository>
-	    <id>jenkins-releases</id>
-	    <url>http://repo.jenkins-ci.org/releases/</url>
-	  </repository>
-	</repositories>
 
 </project>
