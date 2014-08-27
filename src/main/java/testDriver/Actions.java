@@ -9,16 +9,13 @@ package testDriver;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-
-import javax.swing.JOptionPane; 
 
 import org.openqa.selenium.WebElement;
 
-import dataReader.DBReader;
 import seleniumdriver.SeleniumImplementation;
 import Common.Property;
 import Common.Utility;
+import dataReader.DBReader;
 
 public class Actions {
 	SeleniumImplementation objSeleniumDriver = null; 

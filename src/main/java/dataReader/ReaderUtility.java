@@ -1,12 +1,11 @@
 package dataReader;
 
-import java.sql.*;
-import Common.*;
-import java.io.*;
-
+import java.io.File;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.excel.XlsDataSet;
+
+import Common.Property;
 
 /**
  * All Utility functions that assist in communicating with external files like TestCase sheet, DataData sheet and Object Repository sheet etc are listed here.

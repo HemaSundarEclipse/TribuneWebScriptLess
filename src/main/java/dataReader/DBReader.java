@@ -1,16 +1,12 @@
 package dataReader;
 
-import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.swing.JOptionPane;
-
 import Common.Property;
-import Common.Utility;
 
 public class DBReader {
 	static Connection  connection = null;

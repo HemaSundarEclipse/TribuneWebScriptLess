@@ -7,26 +7,21 @@ package seleniumdriver;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.lang.Object;
-import java.lang.StringBuilder;
 import java.io.File;
-import java.lang.reflect.Array;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
@@ -39,9 +34,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.internal.WrapsDriver;
-//import org.openqa.selenium.internal.selenesedriver.TakeScreenshot;
-import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -49,18 +41,12 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.JOptionPane; 
-
-
-
-
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
-import com.google.common.base.Function;
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
-
 import Common.Property;
 import Common.Utility;
+
+import com.thoughtworks.selenium.Selenium;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+//import org.openqa.selenium.internal.selenesedriver.TakeScreenshot;
 
 public class SeleniumImplementation {
 

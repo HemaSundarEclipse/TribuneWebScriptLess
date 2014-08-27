@@ -1,15 +1,15 @@
 package com.tribune.uiautomation.testscripts;
 
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
-import java.util.Set;
+
 
 import junit.framework.Assert;
 
 import org.dbunit.dataset.ITable;
-import org.dbunit.dataset.NoSuchColumnException;
+
 import org.junit.Before;
 import org.junit.Test;
 
