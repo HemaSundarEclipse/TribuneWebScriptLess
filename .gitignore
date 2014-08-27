@@ -3,3 +3,5 @@
 */target/**
 /bin/
 */bin/**
+src/main/resources/BDDStepRecord/*
+src/main/resources/Execution_Log/*
