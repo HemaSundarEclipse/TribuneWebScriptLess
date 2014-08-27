@@ -1,2 +1,0 @@
-TestCaseID							TestStep							BDD_Step							Status							Remarks
-
