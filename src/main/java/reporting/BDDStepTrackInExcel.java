@@ -43,12 +43,12 @@ public class BDDStepTrackInExcel implements IBddStepFormation {
 	private String Workbook = "";
 	private static int rowNumber = 0;
 	private FileOutputStream out = null;
-	
+
 /*********************************************************************************************
-Class Name: 			createFile		
+Class Name: 			createFile
 Description:			Create File for BDD log sheet	
 						Property.BDDFile_Location is used from Property.java file
-*********************************************************************************************/		
+*********************************************************************************************/
 	
 	public void createFile(String Filename){
 		
@@ -63,7 +63,7 @@ Description:			Create Header in BDD log sheet
 *********************************************************************************************/	
 	
 	public void CreateHeader(){
-	    // Create a row and put some cells in it. Rows are 0 based.
+		// Create a row and put some cells in it. Rows are 0 based.
 	    XSSFRow row = sheet.createRow(rowNumber);
 	    rowNumber ++ ;
 	    // Create a cell and put a value in it.
