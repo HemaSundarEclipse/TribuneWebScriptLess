@@ -32,9 +32,9 @@ public class Property {
 
 	public static String JDBCConnectionStringBDDFile = "jdbc:odbc:Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};DBQ={0};READONLY=TRUE";
 
-	public static String IsSauceLabExecution = "true";
+	public static String IsSauceLabExecution = "false";
 
-	public static String IsRemoteExecution = "true";
+	public static String IsRemoteExecution = "false";
 
 	public static String RemoteURL = "";
 

@@ -23,6 +23,7 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -40,6 +41,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+
 
 import Common.Property;
 import Common.Utility;
@@ -93,7 +97,8 @@ Output:					driver
 		try {
 			if (Property.IsRemoteExecution.equalsIgnoreCase("true")) {
 				System.out.println("Remote execution is true");
-				String remoteURL = Property.RemoteURL + "/wd/hub";
+//				String remoteURL = Property.RemoteURL + "/wd/hub";
+				String remoteURL = "http://192.168.1.222:5566/wd/hub";
 				URL uri = new URL(remoteURL);
 				DesiredCapabilities capabilities = new DesiredCapabilities();
 				
@@ -114,6 +119,16 @@ Output:					driver
 						capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
 						capabilities.setCapability(CapabilityType.VERSION, "7");
 						capabilities.setCapability(CapabilityType.PLATFORM, "OS X 10.9");
+												
+					} else if (browserName.equalsIgnoreCase("firefox")) {
+						System.out.println("Remote browser is firefox");
+						//capabilities = DesiredCapabilities.safari();
+						capabilities.setBrowserName("firefox");
+						capabilities.setPlatform(Platform.WIN8_1);
+//						
+//						capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
+//						capabilities.setCapability(CapabilityType.VERSION, "7");
+//						capabilities.setCapability(CapabilityType.PLATFORM, "OS X 10.9");
 												
 					}
 										
@@ -140,6 +155,7 @@ Output:					driver
 					capabilities.setCapability("firefox_profile", remoteProfile
 							.toString().toString());
 					driver = new RemoteWebDriver(uri, capabilities);
+					
 					
 					
 					
