@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Parallel Tests" verbose="1" thread-count="10" parallel="tests">
+	<tests>	
+		<test name="Test">
+			<parameters>
+				<parameter name="platform" value="Windows" />
+				<parameter name="browser" value="Firefox" />
+ 				<parameter name="version" value="8" />
+ 			</parameters>
+        	<classes>
+      			<class name="com.tribune.uiautomation.testscripts.TestEngine"/>
+    		</classes>
+    	</test> <!-- Test -->
+		
+		<test name="Test1">
+			<parameters>
+				<parameter name="platform" value="Windows" />
+				<parameter name="browser" value="Firefox" />
+				<parameter name="version" value="8" />
+ 			</parameters>
+        	<classes>
+      			<class name="com.tribune.uiautomation.testscripts.TestEngine"/>
+    		</classes>
+    	</test> <!-- Test -->
+
+		<test name="Test2">
+			<parameters>
+				<parameter name="platform" value="Windows" />
+				<parameter name="browser" value="Firefox" />
+ 				<parameter name="version" value="8" />
+ 			</parameters>
+        	<classes>
+      			<class name="com.tribune.uiautomation.testscripts.TestEngine"/>
+    		</classes>
+    	</test> <!-- Test -->
+		
+		<test name="Test3">
+			<parameters>
+				<parameter name="platform" value="Windows" />
+				<parameter name="browser" value="Firefox" />
+				<parameter name="version" value="8" />
+ 			</parameters>
+        	<classes>
+      			<class name="com.tribune.uiautomation.testscripts.TestEngine"/>
+    		</classes>
+    	</test> <!-- Test -->
+
+    </tests>	
+</suite> <!-- Suite -->

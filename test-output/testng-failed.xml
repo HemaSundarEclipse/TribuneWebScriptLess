@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" name="Failed suite [Parallel Tests]" parallel="tests">
+  <parameter name="browser" value="Firefox"/>
+  <parameter name="version" value="8"/>
+  <parameter name="platform" value="Windows"/>
+  <test name="Test3(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="version" value="8"/>
+    <parameter name="platform" value="Windows"/>
+    <classes>
+      <class name="com.tribune.uiautomation.testscripts.TestEngine">
+        <methods>
+          <include name="Execution"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.tribune.uiautomation.testscripts.TestEngine -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+  <test name="Test(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="version" value="8"/>
+    <parameter name="platform" value="Windows"/>
+    <classes>
+      <class name="com.tribune.uiautomation.testscripts.TestEngine">
+        <methods>
+          <include name="Execution"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.tribune.uiautomation.testscripts.TestEngine -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test name="Test2(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="version" value="8"/>
+    <parameter name="platform" value="Windows"/>
+    <classes>
+      <class name="com.tribune.uiautomation.testscripts.TestEngine">
+        <methods>
+          <include name="Execution"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.tribune.uiautomation.testscripts.TestEngine -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test name="Test1(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="version" value="8"/>
+    <parameter name="platform" value="Windows"/>
+    <classes>
+      <class name="com.tribune.uiautomation.testscripts.TestEngine">
+        <methods>
+          <include name="Execution"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.tribune.uiautomation.testscripts.TestEngine -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Parallel Tests] -->

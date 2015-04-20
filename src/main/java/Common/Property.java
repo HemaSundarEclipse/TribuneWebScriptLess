@@ -34,9 +34,9 @@ public class Property {
 
 	public static String IsSauceLabExecution = "false";
 
-	public static String IsRemoteExecution = "false";
+	public static String IsRemoteExecution = "true";
 
-	public static String RemoteURL = "";
+	public static String RemoteURL = "http://localhost:4444";
 
 	public static HashMap<String, String> paramMap = new HashMap<String, String>();
 

@@ -6,12 +6,13 @@ import java.util.HashMap;
 import java.util.Properties;
 
 
-import junit.framework.Assert;
+
+
+
 
 import org.dbunit.dataset.ITable;
-
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 
 import reporting.BddStepCreationControler;
 import reporting.LogFile;
@@ -45,7 +46,7 @@ public class TestEngine {
 	 * OSString, TestSuite, BrowserName, SyncTimeOut, IsRemoteExecution, IsSauceLabExecution, ApplicationURL, RemoteURL, BDD_FileFormat, BDD_FileName
 	 * Also initializes variables required for BDDType reporting 
 	 */
-    @Before
+    @BeforeTest
 	public void beforeTest(){
 		try{	
 			
@@ -323,7 +324,7 @@ public class TestEngine {
 	 * Executes all test cases or list of test cases specified by user.
 	 * @throws Exception
 	 */
-	@Test
+	@org.testng.annotations.Test
 	public void Execution() throws Exception {
 		
 		try{

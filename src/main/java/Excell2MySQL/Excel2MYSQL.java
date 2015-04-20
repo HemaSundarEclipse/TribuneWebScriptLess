@@ -4,7 +4,6 @@
 package Excell2MySQL;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,14 +14,13 @@ import java.sql.Statement;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Test;
 
 /**
  * @author Hemsundar
  *
  */
 public class Excel2MYSQL {
-	@Test
+	@org.testng.annotations.Test
 	public void readingDataFromExcel_Writing2MySQL() throws IOException, SQLException, ClassNotFoundException {
 		FileInputStream fs = new FileInputStream("test.xls");
 		XSSFWorkbook wb = new XSSFWorkbook(fs);

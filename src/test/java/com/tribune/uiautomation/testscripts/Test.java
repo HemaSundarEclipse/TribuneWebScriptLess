@@ -3,9 +3,6 @@
  */
 package com.tribune.uiautomation.testscripts;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 /**
  * @author Hemsundar
  *

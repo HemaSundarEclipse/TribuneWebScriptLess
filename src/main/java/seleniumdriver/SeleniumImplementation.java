@@ -9,6 +9,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,6 +46,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
+
+
 import Common.Property;
 import Common.Utility;
 
@@ -52,6 +55,7 @@ import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 //import org.openqa.selenium.internal.selenesedriver.TakeScreenshot;
 
+@SuppressWarnings("deprecation")
 public class SeleniumImplementation {
 
 	private static String browserName;
@@ -94,86 +98,28 @@ Output:					driver
 	public void initDriver() {
 		System.out.println("Calling init");
 		System.out.println("Remote value = " + Property.IsRemoteExecution);
-		try {
-			if (Property.IsRemoteExecution.equalsIgnoreCase("true")) {
-				System.out.println("Remote execution is true");
-//				String remoteURL = Property.RemoteURL + "/wd/hub";
-				String remoteURL = "http://192.168.1.222:5566/wd/hub";
-				URL uri = new URL(remoteURL);
-				DesiredCapabilities capabilities = new DesiredCapabilities();
-				
-				
-				if (Property.RemoteURL.toLowerCase().contains("saucelabs")) {
-					System.out.println("Remote Execution through saucelabs");
-					
-					if (browserName.equalsIgnoreCase("internetexplorer")) {
-						System.out.println("Remote browser is internetxplorer");
-						capabilities.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
-						capabilities.setCapability(CapabilityType.VERSION, "8");
-						capabilities.setCapability(CapabilityType.PLATFORM, "Windows 7");
-						
-						
-					} else if (browserName.equalsIgnoreCase("safari")) {
-						System.out.println("Remote browser is safari");
-						//capabilities = DesiredCapabilities.safari();
-						capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
-						capabilities.setCapability(CapabilityType.VERSION, "7");
-						capabilities.setCapability(CapabilityType.PLATFORM, "OS X 10.9");
-												
-					} else if (browserName.equalsIgnoreCase("firefox")) {
-						System.out.println("Remote browser is firefox");
-						//capabilities = DesiredCapabilities.safari();
-						capabilities.setBrowserName("firefox");
-						capabilities.setPlatform(Platform.WIN8_1);
-//						
-//						capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
-//						capabilities.setCapability(CapabilityType.VERSION, "7");
-//						capabilities.setCapability(CapabilityType.PLATFORM, "OS X 10.9");
-												
-					}
-										
+	
+			try {
+				if (Property.IsRemoteExecution.equalsIgnoreCase("true")) {
+					System.out.println("Remote execution is true");
+					String remoteURL = Property.RemoteURL + "/wd/hub";
+					URL uri = new URL(remoteURL);
+					DesiredCapabilities capabilities = new DesiredCapabilities();				
+					if (Property.RemoteURL.toLowerCase().contains("saucelabs")) {
+						System.out.println("Remote Execution through saucelabs");
+						capabilities = creatingCapabilityForRemoteBrowser(capabilities);		             
+					} 
+					/**
+					 * Remote execution without SausLabs i.e. Grid execution
+					 */
 					else {
-						System.out.println("Remote browser is either Firefox or chrome");
-						capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
-						capabilities.setCapability("name", "TribuneSanityCheck1");
-						//capabilities.setCapability(CapabilityType.PLATFORM, "Windows 7");
-					}
-					 	
-
-				        
-				        
-				}
-
-				if (browserName.equalsIgnoreCase("firefox")) {
-					System.out.println("Creating profile for remote FF browser");
-					FirefoxProfile remoteProfile = new FirefoxProfile();
-					remoteProfile.setPreference(
-							"webdriver_assume_untrusted_issuer", false);
-					remoteProfile.setAcceptUntrustedCertificates(true);
-					remoteProfile.setEnableNativeEvents(true);
-					capabilities.setBrowserName("firefox");
-					capabilities.setCapability("firefox_profile", remoteProfile
-							.toString().toString());
-					driver = new RemoteWebDriver(uri, capabilities);
-					
-					
-					
-					
-				} else if (browserName.equalsIgnoreCase("internetexplorer")) {
-					System.out.println("Creating profile for remote IE browser");
-					capabilities.setBrowserName("internet explorer");
-					capabilities.setCapability("ignoreProtectedModeSettings",
-							true);
-					driver = new RemoteWebDriver(uri, capabilities);
-				}
+						capabilities = creatingCapabilityForRemoteBrowser(capabilities);
+						}
+					creatingProfileForRemoteBrowser(capabilities, uri);
 				
-				else if (browserName.equalsIgnoreCase("safari")) {
-					System.out.println("Creating profile for remote Safari browser");
-					driver = new RemoteWebDriver(uri, capabilities);
-				}
-		
-				
-			} else {
+					driver.manage().timeouts().implicitlyWait(15000, TimeUnit.MILLISECONDS);
+					System.out.println("ending init");
+				} else {
 				System.out.println("Remote execution is false");
 				if (browserName.equalsIgnoreCase("firefox")) {
 					FirefoxProfile ffprofile = new FirefoxProfile();
@@ -214,16 +160,76 @@ Output:					driver
 					driver = new ChromeDriver(service, chromeCapabilities);
 
 				}
+				}
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			System.out.println("exception aaa");
-			System.out.println(e.getStackTrace());
-			
-			System.out.println(e.getMessage());
 		}
-		driver.manage().timeouts().implicitlyWait(15000, TimeUnit.MILLISECONDS);
-		System.out.println("ending init");
+
+
+/**
+ * 
+ */
+private void creatingProfileForRemoteBrowser(DesiredCapabilities capabilities, URL uri) {
+	if (browserName.equalsIgnoreCase("firefox")) {
+		System.out.println("Creating profile for remote FF browser");
+		FirefoxProfile remoteProfile = new FirefoxProfile();
+		remoteProfile.setPreference(
+				"webdriver_assume_untrusted_issuer", false);
+		remoteProfile.setAcceptUntrustedCertificates(true);
+		remoteProfile.setEnableNativeEvents(true);
+		capabilities.setBrowserName("firefox");
+		capabilities.setCapability("firefox_profile", remoteProfile
+				.toString().toString());
+		driver = new RemoteWebDriver(uri, capabilities);
+	} else if (browserName.equalsIgnoreCase("internetexplorer")) {
+		System.out.println("Creating profile for remote IE browser");
+		capabilities.setBrowserName("internet explorer");
+		capabilities.setCapability("ignoreProtectedModeSettings",
+				true);
+		driver = new RemoteWebDriver(uri, capabilities);
+	} else if (browserName.equalsIgnoreCase("safari")) {
+		System.out.println("Creating profile for remote Safari browser");
+		driver = new RemoteWebDriver(uri, capabilities);
 	}
+
+}
+
+
+/**
+ * @param capabilities
+ * @return 
+ */
+private DesiredCapabilities creatingCapabilityForRemoteBrowser(DesiredCapabilities capabilities) {
+	if (browserName.equalsIgnoreCase("internetexplorer")) {
+		System.out.println("Remote browser is internetxplorer");
+		capabilities = DesiredCapabilities.internetExplorer();
+		capabilities.setPlatform(Platform.ANY);
+//		capabilities.setVersion("24");
+		
+	} else if (browserName.equalsIgnoreCase("safari")) {
+		System.out.println("Remote browser is safari");
+		capabilities = DesiredCapabilities.safari();
+		capabilities.setPlatform(Platform.ANY);
+//		capabilities.setVersion("24");
+	} else if (browserName.equalsIgnoreCase("firefox")) {
+		System.out.println("Remote browser is firefox");
+		capabilities = DesiredCapabilities.firefox();
+		capabilities.setPlatform(Platform.ANY);
+//		capabilities.setVersion("24");
+								
+	}
+						
+	else if(browserName.equalsIgnoreCase("chrome")) {
+		System.out.println("Remote browser is either Chrome");
+		capabilities = DesiredCapabilities.chrome();
+		capabilities.setPlatform(Platform.ANY);
+//		capabilities.setVersion("24");
+	}
+	return capabilities;
+}
 
 /*********************************************************************************************
 Step action name: 		openBrowser			

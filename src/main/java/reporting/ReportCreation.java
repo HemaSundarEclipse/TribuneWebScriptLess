@@ -1,9 +1,6 @@
 package reporting;
 
-import java.io.OutputStream;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import org.apache.log4j.Logger;
 
 import Common.Property;
